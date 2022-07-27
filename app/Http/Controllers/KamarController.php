@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kamar;
 use Illuminate\Http\Request;
 
 class KamarController extends Controller
@@ -13,7 +14,8 @@ class KamarController extends Controller
      */
     public function index()
     {
-        //
+        $kamar = Kamar::all();
+        return view('kamar.kamar', compact('kamar'));
     }
 
     /**
@@ -23,7 +25,8 @@ class KamarController extends Controller
      */
     public function create()
     {
-        //
+        return view('kamar.tambahkamar');
+
     }
 
     /**
@@ -34,7 +37,12 @@ class KamarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Kamar::create([
+            'tipe_kamar' => $request->tipe_kamar,
+            'jumlah_kamar' => $request->jumlah_kamar,
+        ]);
+
+        return Redirect('/kamar')->with('success', 'Data Barang berhasil Ditambahkan');
     }
 
     /**
@@ -56,7 +64,8 @@ class KamarController extends Controller
      */
     public function edit($id)
     {
-        //
+        $kamar = Kamar::findorfail($id);
+        return view('kamar.edit',compact('kamar'));
     }
 
     /**
@@ -68,7 +77,9 @@ class KamarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $kamar = Kamar::findorfail($id);
+        $kamar -> update($request->all());
+        return redirect('/kamar')->with('success', "Data Kamar Berhasil Di Update");
     }
 
     /**
@@ -79,6 +90,8 @@ class KamarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = Kamar::findorfail($id);
+        $delete->delete();
+        return back()->with('destroy', "Data Kamar Berhasil Di Delete");
     }
 }

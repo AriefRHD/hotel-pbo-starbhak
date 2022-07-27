@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KamarController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layout.nav');
+    return view('welcome');
 });
+
+Route::resource('kamar',KamarController::class);
+
