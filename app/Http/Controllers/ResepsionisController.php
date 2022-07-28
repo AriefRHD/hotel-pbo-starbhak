@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kamar;
 use App\Models\Pemesanan;
 use Illuminate\Http\Request;
 
-class PemesananController extends Controller
+class ResepsionisController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class PemesananController extends Controller
      */
     public function index()
     {
-        $pesan = Pemesanan::with('kamars')->paginate();
-        return view('tamu.tamu', compact('pesan'));
+        $receipt = Pemesanan::all();
+        return view('resepsionis.resepsionis', compact('receipt'));
     }
 
     /**
@@ -26,8 +25,7 @@ class PemesananController extends Controller
      */
     public function create()
     {
-        $datakamar = Kamar::all();
-        return view('tamu.create', compact('datakamar'));
+        //
     }
 
     /**
@@ -38,16 +36,7 @@ class PemesananController extends Controller
      */
     public function store(Request $request)
     {
-        Pemesanan::create([
-            'checkin' => $request->checkin,
-            'checkout' => $request->checkout,
-            'nama_pemesan' => $request->nama_pemesan,
-            'email_pemesan' => $request->email_pemesan,
-            'notelpon' => $request->notelpon,
-            'nama_tamu' => $request->nama_tamu,
-            'tipe_kamar_id' => $request->tipe_kamar_id,
-        ]);
-        return view('tamu.thx');
+        //
     }
 
     /**

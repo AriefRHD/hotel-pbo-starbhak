@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\FasilitasHotel;
-use App\Http\Controllers\FHController;
 
 class FHController extends Controller
 {

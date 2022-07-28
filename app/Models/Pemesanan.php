@@ -11,7 +11,7 @@ class Pemesanan extends Model
     protected $table = "pemesanans";
     protected $guarded = [];
 
-    public function kamar()
+    public function kamars()
     {
         return $this->belongsTo(Kamar::class);
     }
