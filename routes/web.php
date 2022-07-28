@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\KamarController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FHController;
+use App\Http\Controllers\KamarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,4 @@ Route::get('/', function () {
 });
 
 Route::resource('kamar',KamarController::class);
-
+Route::resource('fhotel',FHController::class);

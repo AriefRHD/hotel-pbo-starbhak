@@ -62,7 +62,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Fasilitas Kami</h6>
-                        <a class="collapse-item" href="#">Fasilitas Hotel</a>
+                        <a class="collapse-item" href="/fhotel">Fasilitas Hotel</a>
                         <a class="collapse-item" href="#">Fasilitas Kamar</a>
                     </div>
                 </div>
