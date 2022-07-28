@@ -2,7 +2,7 @@
 @section('isi')
     <div class="container">
         <div class="container">
-            <h1 class="mt-4 mb-4 text-dark">HOTEL HEBAT</h1>
+            <h1 class="mt-4 mb-4 fw-bold text-dark">HOTEL HEBAT</h1>
             <img src="{{ asset('gambar/gambar-hotelnya.jpg') }}" class="img-fluid mt-4" alt="...">
         </div>
         <div class="container mt-4 text-center">

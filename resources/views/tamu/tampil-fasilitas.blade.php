@@ -17,10 +17,41 @@
             <h1 class="mt-4 mb-4 fw-bold">HOTEL HEBAT</h1>
             <img src="{{ asset('gambar/gambar-kamar.jpg') }}" class="img-fluid mt-4" alt="...">
         </div>
-        <div class="container mt-4 text-center">
-            <h2 class="fw-bold">TENTANG KAMI</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est quaerat nulla laudantium totam omnis minus vitae voluptatum tenetur et quisquam. Autem, vel quisquam? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus minus eligendi obcaecati. Lorem ipsum dolor sit amet. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore iste ab neque ullam quidem iusto reprehenderit qui! Incidunt, id. Exercitationem!</p>
-        </div>
+
+        <div class="container mt-4">
+          <h1 class="fw-bold text-dark mt-4">Fasilitas</h1>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="news">
+              <div class="card" style="width: 400px;">
+                <img src="{{ asset('gambar/gambar-kolam.jpg') }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="mb-4 fw-bold">Kolam Renang</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+            <div class="col-md-4">
+              <div class="card" style="width: 400px;">
+                <img src="{{ asset('gambar/gambar-makanannya.jpg') }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="mb-4 fw-bold">Makanan</h6>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-md-4">
+              <div class="card" style="width: 400px;">
+                <img src="{{ asset('gambar/gambar-hotelnya.jpg') }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="mb-4 fw-bold">Kenyamanan Hotel</h6>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+          </div>
 
 
 
