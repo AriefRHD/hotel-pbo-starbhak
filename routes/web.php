@@ -6,6 +6,7 @@ use App\Http\Controllers\FKController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\ResepsionisController;
+use App\Http\Controllers\TamuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,5 @@ Route::resource('kamar',KamarController::class);
 Route::resource('fhotel',FHController::class);
 Route::resource('pemesanan',PemesananController::class);
 Route::resource('resepsionis',ResepsionisController::class);
+Route::get('/tampil-kamar', [TamuController::class,'tampil_kamar'])->name('tampil_kamar');
+Route::get('/tampil-fasilitas', [TamuController::class,'tampil_fasilitas'])->name('tampil_fasilitas');

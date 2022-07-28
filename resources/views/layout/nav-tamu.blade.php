@@ -20,6 +20,25 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('template/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
+    {{-- google fonts --}}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+        h1{
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+        h2{
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+        p{
+            font-weight: 400;
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+    
+
 </head>
 
 <body id="page-top">
