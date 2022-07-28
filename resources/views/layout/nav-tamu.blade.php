@@ -50,12 +50,12 @@
             <hr class="sidebar-divider my-0">
 
             <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/tampil-kamar">
                     <i class="fas fa-bed"></i>
                     <span>Kamar</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/tampil-fasilitas">
                     <i class="fas fa-swimming-pool"></i> <span>Fasilitas</span>
                 </a>
             </li>
@@ -129,7 +129,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard Tamu</h1>
+                        {{-- <h1 class="h3 mb-0 text-gray-800">Dashboard Tamu</h1> --}}
                     </div>
 
                     <!-- Content Row -->
