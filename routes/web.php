@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FHController;
+use App\Http\Controllers\FKController;
 use App\Http\Controllers\KamarController;
+use App\Http\Controllers\PemesananController;
+use App\Http\Controllers\ResepsionisController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +24,5 @@ Route::get('/', function () {
 
 Route::resource('kamar',KamarController::class);
 Route::resource('fhotel',FHController::class);
+Route::resource('pemesanan',PemesananController::class);
+Route::resource('resepsionis',ResepsionisController::class);

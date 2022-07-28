@@ -40,6 +40,7 @@ class KamarController extends Controller
         Kamar::create([
             'tipe_kamar' => $request->tipe_kamar,
             'jumlah_kamar' => $request->jumlah_kamar,
+            'fasilitas' => $request->fasilitas,
         ]);
 
         return Redirect('/kamar')->with('success', 'Data Barang berhasil Ditambahkan');

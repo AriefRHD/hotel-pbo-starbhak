@@ -43,20 +43,25 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="/">
+                <a class="nav-link" href="/pemesanan">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
             <hr class="sidebar-divider my-0">
 
             <li class="nav-item active">
-                <a class="nav-link" href="/kamar">
+                <a class="nav-link" href="#">
                     <i class="fas fa-bed"></i>
                     <span>Kamar</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/fhotel">
+                <a class="nav-link" href="#">
                     <i class="fas fa-swimming-pool"></i> <span>Fasilitas</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/pemesanan/create">
+                    <i class="fas fa-credit-card"></i> <span>Pesan Kamar</span>
                 </a>
             </li>
 
@@ -100,7 +105,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin 1</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Tamu</span>
                                 <img class="img-profile rounded-circle"
                                     src="{{ asset('template/img/undraw_profile.svg') }}">
                             </a>
@@ -124,7 +129,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard Admin</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard Tamu</h1>
                     </div>
 
                     <!-- Content Row -->

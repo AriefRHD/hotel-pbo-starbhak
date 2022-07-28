@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FasilitasKamar;
+use App\Models\Kamar;
 use Illuminate\Http\Request;
 
 class FKController extends Controller
@@ -13,7 +15,8 @@ class FKController extends Controller
      */
     public function index()
     {
-        //
+        $fkamar = FasilitasKamar::with('kamars')->paginate();
+        return view('fkamar.fkamar', compact('fkamar'));
     }
 
     /**
@@ -23,7 +26,8 @@ class FKController extends Controller
      */
     public function create()
     {
-        //
+        $datakamar = Kamar::all();
+        return view('fkamar.tambahfk', compact('datakamar'));
     }
 
     /**
@@ -34,7 +38,12 @@ class FKController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        FasilitasKamar::create([
+            'tipe_kamar_id' => $request->tipe_kamar_id,
+            'nama_fasilitas' => $request->nama_fasilitas,
+        ]);
+        return redirect('/fkamar')->with('success','Data Fasilitas Berhasil Di Tambahkan');
+
     }
 
     /**
@@ -79,6 +88,8 @@ class FKController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $fkamar = FasilitasKamar::findorfail($id);
+        $fkamar->delete();
+        return redirect('fkamar');
     }
 }

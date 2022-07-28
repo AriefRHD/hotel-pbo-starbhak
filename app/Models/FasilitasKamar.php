@@ -2,17 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Kamar;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class FasilitasKamar extends Model
 {
 
     protected $table = "fasilitas_kamars";
-    protected $guarded = [];
+    protected $fillable = ['tipe_kamar_id','nama_fasilitas'];
 
-
-    public function kamar()
+    public function kamars()
     {
         return $this->belongsTo(Kamar::class);
     }

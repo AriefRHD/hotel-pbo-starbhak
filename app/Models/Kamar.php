@@ -11,18 +11,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Kamar extends Model
 {
     protected $table = "kamars";
-    protected $guarded = [];
+    protected $fillable = ['tipe_kamar','jumlah_kamar','fasilitas'];
+    protected $primaryKey = "id";
 
     public function pemesanan()
     {
         return $this->hasOne(Pemesanan::class);
     }
-    public function fasilitaskamar()
-    {
-        return $this->hasOne(FasilitasKamar::class);
-    }
-    public function fasilitashotel()
-    {
-        return $this->hasOne(FasilitasHotel::class);
-    }
+    
+    // public function fasilitaskamar()
+    // {
+    //     return $this->hasOne(FasilitasKamar::class);
+    // }
+    // public function fasilitashotel()
+    // {
+    //     return $this->hasOne(FasilitasHotel::class);
+    // }
 }
