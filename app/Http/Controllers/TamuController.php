@@ -14,4 +14,8 @@ class TamuController extends Controller
     {
         return view('tamu.tampil-fasilitas');
     }
+    public function tampil_dashboard()
+    {
+        return view('welcome');
+    }
 }
