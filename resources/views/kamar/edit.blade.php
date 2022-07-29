@@ -21,6 +21,14 @@
                 <div class="text-warning">{{ $message }}</div>
                 @enderror
             </div>
+            <div class="mb-3">
+                <label class="form-label">Keterangan</label>
+                <input type="text" placeholder="Masukkan Keterangan" class="form-control"
+                    value="{{ $kamar->fasilitas }}" name="fasilitas" required>
+                @error('fasilitas')
+                <div class="text-warning">{{ $message }}</div>
+                @enderror
+            </div>
             <button class="btn btn-outline-danger" type="submit">Submit</button>
         </form>
     </div>
