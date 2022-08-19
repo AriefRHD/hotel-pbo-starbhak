@@ -33,12 +33,12 @@ Route::group(['middleware' => ['auth']],function(){
         Route::get('resepsionis',[ResepsionisController::class,'index'])->name('resepsionis');
     });
 
-Route::resource('kamar',KamarController::class);
-Route::resource('fhotel',FHController::class);
-Route::resource('pemesanan',PemesananController::class);
-Route::resource('resepsionis',ResepsionisController::class);
-Route::get('/tampil-kamar', [TamuController::class,'tampil_kamar'])->name('tampil_kamar');
-Route::get('/tampil-fasilitas', [TamuController::class,'tampil_fasilitas'])->name('tampil_fasilitas');
+// Route::resource('kamar',KamarController::class);
+// Route::resource('fhotel',FHController::class);
+// Route::resource('pemesanan',PemesananController::class);
+// Route::resource('resepsionis',ResepsionisController::class);
+// Route::get('/tampil-kamar', [TamuController::class,'tampil_kamar'])->name('tampil_kamar');
+// Route::get('/tampil-fasilitas', [TamuController::class,'tampil_fasilitas'])->name('tampil_fasilitas');
 });
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 

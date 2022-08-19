@@ -11,13 +11,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Kamar extends Model
 {
     protected $table = "kamars";
-    protected $fillable = ['tipe_kamar','jumlah_kamar','fasilitas'];
-    protected $primaryKey = "id";
+    protected $fillable = ['tipe_kamar','jumlah_kamar','fasilitas_kamar','foto_kamar'];
+    // protected $primaryKey = "id";
 
-    public function pemesanan()
-    {
-        return $this->hasOne(Pemesanan::class);
-    }
+    // public function pemesanan()
+    // {
+    //     return $this->hasOne(Pemesanan::class);
+    // }
     
     // public function fasilitaskamar()
     // {
