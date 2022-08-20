@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('pemesanans', function (Blueprint $table) {
             $table->id();
-            $table->date('checkin');
-            $table->date('checkout');
+            $table->string('checkin');
+            $table->string('checkout');
             $table->string('nama_pemesan');
             $table->string('email_pemesan');
-            $table->bigInteger('notelpon');
-            $table->string('nama_tamu');
-            $table->foreignId('tipe_kamar_id');
+            $table->bigInteger('no_telpon');
+            $table->integer('jumlah_pesan');
+            // $table->foreignId('tipe_kamar_id');
             $table->timestamps();
         });
     }

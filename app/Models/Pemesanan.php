@@ -11,8 +11,13 @@ class Pemesanan extends Model
     protected $table = "pemesanans";
     protected $guarded = [];
 
-    public function kamars()
+    public function kamar()
     {
-        return $this->belongsTo(Kamar::class);
+        return $this->belongsTo(Kamar::class, 'tipe_kamar_id');
     }
+
+    // public function kamars()
+    // {
+    //     return $this->belongsTo(Kamar::class);
+    // }
 }
