@@ -18,4 +18,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::apiResource('/kamar', App\Http\Controllers\Api\KamarController::class);
+Route::apiResource('/pemesanan', App\Http\Controllers\Api\PemesananController::class);
 
