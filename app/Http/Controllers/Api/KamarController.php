@@ -13,11 +13,11 @@ class KamarController extends Controller
 {
     public function index()
     {
-        //get posts
-        $posts = Kamar::latest()->paginate(5);
+        //get kamars
+        $kamars = Kamar::latest()->get();
 
-        //return collection of posts as a resource
-        return new KamarResource(true, 'List Data Kamar', $posts);
+        //return collection of kamars as a resource
+        return new KamarResource(true, 'List Data Kamar', $kamars);
     }
 
     public function store(Request $request)
@@ -27,7 +27,7 @@ class KamarController extends Controller
             'tipe_kamar'     => 'required',
             'jumlah_kamar'   => 'required',
             'fasilitas_kamar'   => 'required',
-            'foto_kamar'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // 'foto_kamar'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         //check if validation fails
@@ -36,15 +36,15 @@ class KamarController extends Controller
         }
 
         //upload image
-        $image = $request->file('foto_kamar');
-        $image->storeAs('public/kamar', $image->hashName());
+        // $image = $request->file('foto_kamar');
+        // $image->storeAs('public/kamar', $image->hashName());
 
         //create post
         $kamar = Kamar::create([
             'tipe_kamar'     => $request->tipe_kamar,
             'jumlah_kamar'   => $request->jumlah_kamar,
             'fasilitas_kamar'=> $request->fasilitas_kamar,
-            'foto_kamar'     => $image->hashName(),
+            // 'foto_kamar'     => $image->hashName(),
         ]);
 
         //return response
@@ -64,7 +64,7 @@ class KamarController extends Controller
             'tipe_kamar'     => 'required',
             'jumlah_kamar'   => 'required',
             'fasilitas_kamar'   => 'required',
-            'foto_kamar'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // 'foto_kamar'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         //check if validation fails
@@ -73,26 +73,16 @@ class KamarController extends Controller
         }
 
         //check if image is not empty
-        if ($request->hasFile('foto_kamar')) {
+        if($request) {
 
             //upload image
-            $image = $request->file('foto_kamar');
-            $image->storeAs('public/kamar', $image->hashName());
+            // $image = $request->file('foto_kamar');
+            // $image->storeAs('public/kamar', $image->hashName());
 
             //delete old image
-            Storage::delete('public/kamar/'.$kamar->foto_kamar);
+            // Storage::delete('public/kamar/'.$kamar->foto_kamar);
 
             //update post with new image
-            $kamar->update([
-            'tipe_kamar'     => $request->tipe_kamar,
-            'jumlah_kamar'   => $request->jumlah_kamar,
-            'fasilitas_kamar'=> $request->fasilitas_kamar,
-            'foto_kamar'     => $image->hashName(),
-            ]);
-
-        } else {
-
-            //update post without image
             $kamar->update([
             'tipe_kamar'     => $request->tipe_kamar,
             'jumlah_kamar'   => $request->jumlah_kamar,
