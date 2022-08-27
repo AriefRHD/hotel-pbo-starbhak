@@ -13,10 +13,10 @@ class PemesananController extends Controller
     public function index()
     {
         //get posts
-        $pemesanan = Pemesanan::with('kamar')->get();
+        $pemesanans = Pemesanan::with('kamar')->get();
 
         //return collection of posts as a resource
-        return new PemesananResource(true, 'List Data Pemesanan', $pemesanan);
+        return new PemesananResource(true, 'List Data Pemesanan', $pemesanans);
     }
 
     public function store(Request $request)
@@ -38,7 +38,7 @@ class PemesananController extends Controller
         }
 
         //create post
-        $datapesan = Pemesanan::create([
+        $pemesanan = Pemesanan::create([
             'checkin'   => $request->checkin,
             'checkout'     => $request->checkout,
             'nama_pemesan'   => $request->nama_pemesan,
@@ -49,16 +49,16 @@ class PemesananController extends Controller
         ]);
 
         //return response
-        return new PemesananResource(true, 'Pemesanan Berhasil Ditambahkan!', $datapesan);
+        return new PemesananResource(true, 'Pemesanan Berhasil Ditambahkan!', $pemesanan);
     }
 
-    public function show($datapesan)
+    public function show($pemesanan)
     {
-        $pemesanan = Pemesanan::with('kamar')->where('id',$datapesan)->first();
-        return new PemesananResource(true, 'Data Post Ditemukan!', $pemesanan);
+        $pemesanans = Pemesanan::with('kamar')->where('id',$pemesanan)->first();
+        return new PemesananResource(true, 'Data Post Ditemukan!', $pemesanans);
     }
 
-    public function update(Request $request, Pemesanan $pemesanan)
+    public function update(Request $request, Pemesanan $pemesanans)
     {
         //define validation rules
         $validator = Validator::make($request->all(), [
@@ -76,7 +76,7 @@ class PemesananController extends Controller
             return response()->json($validator->errors(), 422);
         }
         {
-            $pemesanan->update([
+            $pemesanans->update([
             'checkin'   => $request->checkin,
             'checkout'     => $request->checkout,
             'nama_pemesan'   => $request->nama_pemesan,
@@ -89,13 +89,13 @@ class PemesananController extends Controller
         }
 
         //return response
-        return new PemesananResource(true, 'Data Pemesanan Berhasil Diubah!', $pemesanan);
+        return new PemesananResource(true, 'Data Pemesanan Berhasil Diubah!', $pemesanans);
     }
 
-    public function destroy(Pemesanan $pemesanan)
+    public function destroy(Pemesanan $pemesanans)
     {
         //delete 
-        $pemesanan->delete();
+        $pemesanans->delete();
 
         //return response
         return new PemesananResource(true, 'Data Pemesanan Berhasil Dihapus!', null);

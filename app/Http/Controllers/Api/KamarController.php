@@ -14,7 +14,7 @@ class KamarController extends Controller
     public function index()
     {
         //get kamars
-        $kamars = Kamar::latest()->get();
+        $kamars = Kamar::get();
 
         //return collection of kamars as a resource
         return new KamarResource(true, 'List Data Kamar', $kamars);
