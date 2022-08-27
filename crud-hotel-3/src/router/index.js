@@ -17,6 +17,21 @@ const routes = [
         path: '/edit/:id',
         name: 'kamar.edit-kamar',
         component: () => import( /* webpackChunkName: "kamar.edit" */ '@/views/kamar/Edit.vue')
+    },
+    {
+        path: '/pemesanan',
+        name: 'pemesanan.index-pemesanan',
+        component: () => import( /* webpackChunkName: "pemesanan.index" */ '@/views/pemesanan/Index.vue')
+    },
+    {
+        path: '/create-pemesanan',
+        name: 'pemesanan.create-pemesanan',
+        component: () => import( /* webpackChunkName: "pemesanan.create" */ '@/views/pemesanan/Create.vue')
+    },
+    {
+        path: '/edit-pemesanan/:id',
+        name: 'pemesanan.edit-pemesanan',
+        component: () => import( /* webpackChunkName: "pemesanan.edit" */ '@/views/pemesanan/Edit.vue')
     }
 ]
 
