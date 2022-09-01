@@ -58,7 +58,7 @@ class PemesananController extends Controller
         return new PemesananResource(true, 'Data Post Ditemukan!', $pemesanans);
     }
 
-    public function update(Request $request, Pemesanan $pemesanans)
+    public function update(Request $request, Pemesanan $pemesanan)
     {
         //define validation rules
         $validator = Validator::make($request->all(), [
@@ -76,7 +76,7 @@ class PemesananController extends Controller
             return response()->json($validator->errors(), 422);
         }
         {
-            $pemesanans->update([
+            $pemesanan->update([
             'checkin'   => $request->checkin,
             'checkout'     => $request->checkout,
             'nama_pemesan'   => $request->nama_pemesan,
@@ -89,13 +89,13 @@ class PemesananController extends Controller
         }
 
         //return response
-        return new PemesananResource(true, 'Data Pemesanan Berhasil Diubah!', $pemesanans);
+        return new PemesananResource(true, 'Data Pemesanan Berhasil Diubah!', $pemesanan);
     }
 
-    public function destroy(Pemesanan $pemesanans)
+    public function destroy(Pemesanan $pemesanan)
     {
         //delete 
-        $pemesanans->delete();
+        $pemesanan->delete();
 
         //return response
         return new PemesananResource(true, 'Data Pemesanan Berhasil Dihapus!', null);
